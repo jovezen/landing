@@ -31,9 +31,8 @@
           </div>
         </div>
 
-        <img
+        <ImgHeader
           class="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4"
-          :src="headerImg"
           alt="..."
         />
       </div>
@@ -152,13 +151,71 @@
 
     <section class="pt-20 pb-20">
       <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-center text-center mb-5">
+          <div class="w-full lg:w-6/12 px-4">
+            <h2 class="text-4xl font-semibold">POWER BY</h2>
+          </div>
+        </div>
+        <div
+          class="flex flex-row flex-wrap items-center justify-items-center justify-evenly  "
+        >
+          <div data-aos="fade-left" class="pw w-full sm:w-3/12  ">
+            <img src="@/assets/img/zen/pw-binance.png" />
+          </div>
+          <div data-aos="fade-left" class="pw w-full sm:w-3/12 mt-5 mb-5 ">
+            <img src="@/assets/img/zen/pw-cosmos.png" />
+          </div>
+          <div data-aos="fade-left" class="pw w-full sm:w-3/12  ">
+            <img src="@/assets/img/zen/pw-ethereum.png" />
+          </div>
+          <div data-aos="fade-left" class="pw w-full sm:w-6/12  ">
+            <img src="@/assets/img/zen/pw-polkadot.png" />
+          </div>
+          <div data-aos="fade-left" class="pw w-full sm:w-6/12 -mt-10 ">
+            <img src="@/assets/img/zen/pw-tron.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pt-20 pb-20 bg-gray-300">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-center text-center mb-5">
+          <div class="w-full lg:w-6/12 px-4">
+            <h2 class="text-4xl font-semibold">VENTURE CAPITALISTS</h2>
+          </div>
+        </div>
+        <div
+          class="flex flex-row flex-wrap items-center justify-items-center justify-evenly  "
+        >
+          <div data-aos="fade-left" class="vt  sm:w-6/12">
+            <img src="@/assets/img/zen/venture-matrix.png" />
+          </div>
+          <div data-aos="fade-left" class="vt  sm:w-6/12">
+            <img src="@/assets/img/zen/venture-sequaoia.png" />
+          </div>
+          <div data-aos="fade-left" class="vt  sm:w-6/12">
+            <img src="@/assets/img/zen/venture-sourcecode.png" />
+          </div>
+          <div data-aos="fade-left" class="vt  sm:w-6/12">
+            <img src="@/assets/img/zen/venture-yanyuan.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pt-20 pb-20">
+      <div class="container mx-auto px-4">
         <div class="flex flex-wrap justify-center text-center mb-24">
           <div class="w-full lg:w-6/12 px-4">
-            <h2 class="text-4xl font-semibold">Core team</h2>
+            <h2 class="text-4xl font-semibold">CORE TEAM</h2>
           </div>
         </div>
         <div class="flex flex-wrap">
-          <div class="w-full md:w-6/12 lg:w-4/12 lg:mb-0 mb-12 px-4">
+          <div
+            class="w-full md:w-6/12 lg:w-4/12 lg:mb-0 mb-12 px-4"
+            data-aos="fade-left"
+          >
             <span
               class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"
             ></span>
@@ -167,7 +224,7 @@
               <img
                 alt="..."
                 :src="team1"
-                class="shadow-lg rounded-full mx-auto max-w-120-px"
+                class="shadow-lg rounded-full mx-auto max-w-120-px animate-pulse"
               />
               <div class="pt-6 text-center">
                 <h5 class="text-xl font-bold">Josiah Tan</h5>
@@ -185,7 +242,10 @@
               </div>
             </div>
           </div>
-          <div class="w-full md:w-6/12 lg:w-4/12 lg:mb-0 mb-12 px-4">
+          <div
+            data-aos="fade-down"
+            class="w-full md:w-6/12 lg:w-4/12 lg:mb-0 mb-12 px-4"
+          >
             <div class="px-6">
               <img
                 alt="..."
@@ -208,7 +268,10 @@
               </div>
             </div>
           </div>
-          <div class="w-full md:w-6/12 lg:w-4/12 lg:mb-0 mb-12 px-4">
+          <div
+            data-aos="fade-right"
+            class="w-full md:w-6/12 lg:w-4/12 lg:mb-0 mb-12 px-4"
+          >
             <div class="px-6">
               <img
                 alt="..."
@@ -235,118 +298,21 @@
       </div>
     </section>
 
-    <section class="py-20 bg-gray-700 overflow-hidden">
-      <div class="container mx-auto pb-64">
-        <div class="flex flex-wrap justify-center">
-          <div class="w-full md:w-5/12 px-12 md:px-4 ml-auto mr-auto md:mt-64">
-            <div
-              class="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white"
-            >
-              <i class="fas fa-code-branch text-xl"></i>
-            </div>
-            <h3 class="text-3xl mb-2 font-semibold leading-normal text-white">
-              Open Source
-            </h3>
-            <p
-              class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-500"
-            >
-              Since
-              <a
-                href="https://tailwindcss.com/?ref=creativetim"
-                class="text-gray-400"
-                target="_blank"
-              >
-                Tailwind CSS
-              </a>
-              is an open source project we wanted to continue this movement too.
-              You can give this version a try to feel the design and also test
-              the quality of the code!
-            </p>
-            <p
-              class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-500"
-            >
-              Get it free on Github and please help us spread the news with a
-              Star!
-            </p>
-            <a
-              href="https://github.com/creativetimofficial/vue-notus?ref=vn-index"
-              target="_blank"
-              class="github-star mt-4 inline-block text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-gray-800 active:bg-gray-700 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-            >
-              Github Star
-            </a>
+    <section class="pt-20 pb-20 bg-gray-300">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-center text-center mb-24">
+          <div class="w-full lg:w-6/12 px-4">
+            <h2 class="text-4xl font-semibold">FAQ</h2>
           </div>
-
-          <div class="w-full md:w-4/12 px-4 mr-auto ml-auto mt-32 relative">
-            <i
-              class="fab fa-github text-gray-800 text-55 absolute -top-150-px -right-100 left-auto opacity-80"
-            ></i>
+        </div>
+        <div class="flex flex-wrap">
+          <div class="container mx-auto my-5">
+            <Accordion :contents="data"></Accordion>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="pb-16 bg-gray-300 relative pt-32">
-      <div
-        class="-mt-20 top-0 bottom-auto left-0 right-0 w-full absolute h-20"
-        style="transform: translateZ(0);"
-      >
-        <svg
-          class="absolute bottom-0 overflow-hidden"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          version="1.1"
-          viewBox="0 0 2560 100"
-          x="0"
-          y="0"
-        >
-          <polygon
-            class="text-gray-300 fill-current"
-            points="2560 0 2560 100 0 100"
-          ></polygon>
-        </svg>
-      </div>
-
-      <div class="container mx-auto">
-        <div
-          class="flex flex-wrap justify-center bg-white shadow-xl rounded-lg -mt-64 py-16 px-12 relative z-10"
-        >
-          <div class="w-full text-center lg:w-8/12">
-            <p class="text-4xl text-center">
-              <span role="img" aria-label="love">
-                😍
-              </span>
-            </p>
-            <h3 class="font-semibold text-3xl">
-              Do you love this Starter Kit?
-            </h3>
-            <p class="text-gray-600 text-lg leading-relaxed mt-4 mb-4">
-              Cause if you do, it can be yours now. Hit the buttons below to
-              navigate to get the Free version for your next project. Build a
-              new web app or give an old project a new look!
-            </p>
-            <div class="sm:block flex flex-col mt-10">
-              <a
-                href="https://www.creative-tim.com/learning-lab/tailwind/vue/overview/notus?ref=vn-index"
-                target="_blank"
-                class="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-2 bg-green-500 active:bg-green-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-              >
-                Get started
-              </a>
-              <a
-                href="https://github.com/creativetimofficial/vue-notus?ref=vn-index"
-                target="_blank"
-                class="github-star sm:ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-gray-800 active:bg-gray-700 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-              >
-                <i class="fab fa-github text-lg mr-1"></i>
-                <span>Help With a Star</span>
-              </a>
-            </div>
-            <div class="text-center mt-16"></div>
-          </div>
-        </div>
-      </div>
-    </section>
     <footer-component />
   </div>
 </template>
@@ -369,7 +335,10 @@ import headerImg from '@/assets/img/header.png'
 import team1 from '@/assets/img/zen/team-tan.png'
 import team2 from '@/assets/img/zen/team-chan.png'
 import team3 from '@/assets/img/zen/team-takao.png'
+import ImgHeader from '@/components/Headers/Image.vue'
 
+import Accordion from '@/components/Accordion.vue'
+import faq from '@/assets/faq.json'
 export default {
   data() {
     return {
@@ -388,11 +357,38 @@ export default {
       team1,
       team2,
       team3,
+      data: faq,
     }
   },
   components: {
     IndexNavbar,
     FooterComponent,
+    ImgHeader,
+    Accordion,
   },
 }
 </script>
+<style scoped>
+.pw {
+  filter: brightness(0);
+}
+.pw {
+  width: 200px;
+}
+.vt {
+  width: 150px;
+}
+.vt img {
+  width: 80%;
+  margin: 10px;
+  border-radius: 10px;
+}
+.vt {
+  transition: all 1s ease;
+  filter: grayscale(1);
+}
+.vt:hover {
+  transform: scale(1.1);
+  filter: grayscale(0);
+}
+</style>

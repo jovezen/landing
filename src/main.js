@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import AOS from 'aos';
 import 'aos/dist/aos.css' 
-// styles
+
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "@/assets/styles/tailwind.css";
