@@ -1,5 +1,7 @@
 // vue.config.js
 module.exports = {
   runtimeCompiler: true,
-  baseUrl: '/landing/'
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/landing/'
+    : '/'
 };
