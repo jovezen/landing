@@ -6,7 +6,7 @@
         <div class="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4 pb-4">
           <div class="pt-32 sm:pt-0">
             <h2 class="font-semibold text-4xl text-gray-700">
-              ZenChain Protocol
+              Zenchain Protocol
             </h2>
             <p class="mt-4 text-xl leading-relaxed text-gray-600">
               A Dedicated Blockchain That Is Optimized Specifically For DeFi And
@@ -159,13 +159,13 @@
         <div
           class="flex flex-row flex-wrap items-center justify-items-center justify-evenly  "
         >
-          <div data-aos="fade-left" class="pw w-full sm:w-3/12  ">
+          <div data-aos="fade-right" class="pw w-full sm:w-3/12  ">
             <img src="@/assets/img/zen/pw-binance.png" />
           </div>
-          <div data-aos="fade-left" class="pw w-full sm:w-3/12 mt-5 mb-5 ">
+          <div data-aos="fade-right" class="pw w-full sm:w-3/12 mt-5 mb-5 ">
             <img src="@/assets/img/zen/pw-cosmos.png" />
           </div>
-          <div data-aos="fade-left" class="pw w-full sm:w-3/12  ">
+          <div data-aos="fade-down" class="pw w-full sm:w-3/12  ">
             <img src="@/assets/img/zen/pw-ethereum.png" />
           </div>
           <div data-aos="fade-left" class="pw w-full sm:w-6/12  ">
@@ -188,10 +188,10 @@
         <div
           class="flex flex-row flex-wrap items-center justify-items-center justify-evenly  "
         >
-          <div data-aos="fade-left" class="vt  sm:w-6/12">
+          <div data-aos="fade-right" class="vt  sm:w-6/12">
             <img src="@/assets/img/zen/venture-matrix.png" />
           </div>
-          <div data-aos="fade-left" class="vt  sm:w-6/12">
+          <div data-aos="fade-right" class="vt  sm:w-6/12">
             <img src="@/assets/img/zen/venture-sequaoia.png" />
           </div>
           <div data-aos="fade-left" class="vt  sm:w-6/12">
@@ -213,80 +213,27 @@
         </div>
         <div class="flex flex-wrap">
           <div
+            v-for="(mem, key) in team"
+            :key="key"
             class="w-full md:w-6/12 lg:w-4/12 lg:mb-0 mb-12 px-4"
-            data-aos="fade-left"
-          >
-            <span
-              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"
-            ></span>
-
-            <div class="px-6">
-              <img
-                alt="..."
-                :src="team1"
-                class="shadow-lg rounded-full mx-auto max-w-120-px animate-pulse"
-              />
-              <div class="pt-6 text-center">
-                <h5 class="text-xl font-bold">Josiah Tan</h5>
-                <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                  Founder
-                </p>
-                <div class="mt-6">
-                  <button
-                    class="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                    type="button"
-                  >
-                    <i class="fab fa-linkedin"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            data-aos="fade-down"
-            class="w-full md:w-6/12 lg:w-4/12 lg:mb-0 mb-12 px-4"
+            :data-aos="key == 1 ? 'fade-down' : 'fade-up'"
           >
             <div class="px-6">
               <img
                 alt="..."
-                :src="team2"
-                class="shadow-lg rounded-full mx-auto max-w-120-px"
+                :src="require('@/assets/img/zen/' + mem.img)"
+                class="shadow-lg rounded-full mx-auto max-w-120-px "
               />
               <div class="pt-6 text-center">
-                <h5 class="text-xl font-bold">Christopher Chan</h5>
+                <h5 class="text-xl font-bold">{{ mem.name }}</h5>
                 <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                  Business Development Manager
+                  {{ mem.job }}
                 </p>
                 <div class="mt-6">
                   <button
-                    class="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                    class="bg-green-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
                     type="button"
-                  >
-                    <i class="fab fa-linkedin"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            data-aos="fade-right"
-            class="w-full md:w-6/12 lg:w-4/12 lg:mb-0 mb-12 px-4"
-          >
-            <div class="px-6">
-              <img
-                alt="..."
-                :src="team3"
-                class="shadow-lg rounded-full mx-auto max-w-120-px"
-              />
-              <div class="pt-6 text-center">
-                <h5 class="text-xl font-bold">Kawasaki Takao</h5>
-                <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                  Tech Lead
-                </p>
-                <div class="mt-6">
-                  <button
-                    class="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                    type="button"
+                    @click="gotoUrl(mem.linkedin)"
                   >
                     <i class="fab fa-linkedin"></i>
                   </button>
@@ -307,7 +254,7 @@
         </div>
         <div class="flex flex-wrap">
           <div class="container mx-auto my-5">
-            <Accordion :contents="data"></Accordion>
+            <Accordion :contents="faq"></Accordion>
           </div>
         </div>
       </div>
@@ -320,44 +267,19 @@
 import IndexNavbar from '@/components/Navbars/IndexNavbar.vue'
 import FooterComponent from '@/components/Footers/Footer.vue'
 
-import patternVue from '@/assets/img/pattern_vue.png'
-import componentBtn from '@/assets/img/component-btn.png'
-import componentProfileCard from '@/assets/img/component-profile-card.png'
-import componentInfoCard from '@/assets/img/component-info-card.png'
-import componentInfo2 from '@/assets/img/component-info-2.png'
-import componentMenu from '@/assets/img/component-menu.png'
-import componentBtnPink from '@/assets/img/component-btn-pink.png'
-import documentation from '@/assets/img/documentation.png'
-import login from '@/assets/img/login.jpg'
-import profile from '@/assets/img/profile.jpg'
-import landing from '@/assets/img/landing.jpg'
-import headerImg from '@/assets/img/header.png'
-import team1 from '@/assets/img/zen/team-tan.png'
-import team2 from '@/assets/img/zen/team-chan.png'
-import team3 from '@/assets/img/zen/team-takao.png'
 import ImgHeader from '@/components/Headers/Image.vue'
 
 import Accordion from '@/components/Accordion.vue'
 import faq from '@/assets/faq.json'
+import features from '@/assets/features.json'
+import team from '@/assets/team.json'
+
 export default {
   data() {
     return {
-      patternVue,
-      componentBtn,
-      componentProfileCard,
-      componentInfoCard,
-      componentInfo2,
-      componentMenu,
-      componentBtnPink,
-      documentation,
-      login,
-      profile,
-      landing,
-      headerImg,
-      team1,
-      team2,
-      team3,
-      data: faq,
+      faq,
+      team,
+      features,
     }
   },
   components: {
@@ -365,6 +287,11 @@ export default {
     FooterComponent,
     ImgHeader,
     Accordion,
+  },
+  methods: {
+    gotoUrl: function(url) {
+      window.open(url)
+    },
   },
 }
 </script>

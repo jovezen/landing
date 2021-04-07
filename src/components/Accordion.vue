@@ -179,11 +179,6 @@ $accordion-body-content-padding: 1rem;
 }
 
 @media screen and (min-width: $base-width) {
-  #app {
-    padding: $app-padding;
-    overflow: auto;
-  }
-
   .accordion {
     max-height: none;
     border-radius: $accordion-border-radius;

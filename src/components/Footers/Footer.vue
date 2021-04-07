@@ -24,32 +24,17 @@
         <div class="w-full lg:w-6/12 px-4">
           <h4 class="text-3xl font-semibold">Let's keep in touch!</h4>
           <h5 class="text-lg mt-0 mb-2 text-gray-700">
-            Find us on any of these platforms, we respond 1-2 business days.
+            Find us on any of these platforms
           </h5>
           <div class="mt-6 lg:mb-0 mb-6">
             <button
-              class="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+              v-for="(i, key) in social"
+              :key="key"
+              class="bg-white text-green-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
               type="button"
+              @click="gotoUrl(i.url)"
             >
-              <i class="fab fa-twitter"></i>
-            </button>
-            <button
-              class="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-              type="button"
-            >
-              <i class="fab fa-facebook-square"></i>
-            </button>
-            <button
-              class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-              type="button"
-            >
-              <i class="fab fa-dribbble"></i>
-            </button>
-            <button
-              class="bg-white text-gray-900 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-              type="button"
-            >
-              <i class="fab fa-github"></i>
+              <i class="fab" :class="'fa-' + i.icon"></i>
             </button>
           </div>
         </div>
@@ -65,33 +50,28 @@
                 <li>
                   <a
                     class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://www.creative-tim.com/presentation?ref=vn-footer"
+                    href="https://docs.zenchain.co"
+                    target="_blank"
                   >
-                    About Us
+                    Docs
                   </a>
                 </li>
                 <li>
                   <a
                     class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://blog.creative-tim.com?ref=vn-footer"
+                    href="https://github.com/zenchainprotocol/zenchain"
+                    target="_blank"
                   >
-                    Blog
+                    Source code
                   </a>
                 </li>
                 <li>
                   <a
                     class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://www.github.com/creativetimofficial?ref=vn-footer"
+                    href="https://docs.zenchain.co/network/validators"
+                    target="_blank"
                   >
-                    Github
-                  </a>
-                </li>
-                <li>
-                  <a
-                    class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://www.creative-tim.com/bootstrap-themes/free?ref=vn-footer"
-                  >
-                    Free Products
+                    Validator
                   </a>
                 </li>
               </ul>
@@ -104,36 +84,19 @@
               </span>
               <ul class="list-unstyled">
                 <li>
-                  <a
+                  <router-link
+                    :to="{ path: '/terms-and-conditions' }"
                     class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://github.com/creativetimofficial/vue-notus/blob/master/LICENSE.md?ref=vn-footer"
                   >
-                    MIT License
-                  </a>
+                    Terms & Conditions</router-link
+                  >
                 </li>
                 <li>
-                  <a
+                  <router-link
+                    :to="{ path: '/privacy-policy' }"
                     class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://creative-tim.com/terms?ref=vn-footer"
+                    >Privacy Policy</router-link
                   >
-                    Terms & Conditions
-                  </a>
-                </li>
-                <li>
-                  <a
-                    class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://creative-tim.com/privacy?ref=vn-footer"
-                  >
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://creative-tim.com/contact-us?ref=vn-footer"
-                  >
-                    Contact Us
-                  </a>
                 </li>
               </ul>
             </div>
@@ -146,14 +109,7 @@
       >
         <div class="w-full md:w-4/12 px-4 mx-auto text-center">
           <div class="text-sm text-gray-600 font-semibold py-1">
-            Copyright © {{ date }} Vue Notus by
-            <a
-              href="https://www.creative-tim.com?ref=vn-footer"
-              class="text-gray-600 hover:text-gray-900"
-            >
-              Creative Tim
-            </a>
-            .
+            Copyright © {{ date }} ZenChain Foundation
           </div>
         </div>
       </div>
@@ -161,11 +117,19 @@
   </footer>
 </template>
 <script>
+import social from '@/assets/social.json'
+
 export default {
   data() {
     return {
       date: new Date().getFullYear(),
-    };
+      social,
+    }
   },
-};
+  methods: {
+    gotoUrl: function(url) {
+      window.open(url)
+    },
+  },
+}
 </script>
