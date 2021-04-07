@@ -22,7 +22,8 @@
 </template>
 
 <script>
-import { TweenLite, Elastic, Bounce } from 'gsap/all'
+import { gsap, TweenLite, Elastic, Bounce } from 'gsap/all'
+gsap.registerPlugin(TweenLite, Elastic, Bounce)
 export default {
   props: ['contents'],
   methods: {
